@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Cases — SEOFY';
+const description = 'Resultados e exemplos de projetos (em construção).';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <h1 class="text-4xl font-black tracking-tight">Cases</h1>
+    <p class="mt-3 max-w-2xl text-slate-300">
+      Essa seção é um placeholder para a gente colocar resultados, prints e antes/depois.
+      (Sem promessas milagrosas — só o que dá pra provar.)
+    </p>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      {[
+        ['SEO técnico + atualização', 'Recuperação de tráfego com melhorias de conteúdo e estrutura.'],
+        ['Landing page local', 'Página enxuta, rápida e focada em conversão.'],
+      ].map(([h, p]) => (
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="text-sm font-bold">{h}</div>
+          <p class="mt-2 text-sm text-slate-300">{p}</p>
+          <p class="mt-4 text-xs text-slate-500">Em breve: dados, gráficos e detalhes.</p>
+        </div>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Contato — SEOFY';
+const description = 'Peça um orçamento: criação de sites otimizados para SEO, Google Meu Negócio e automações com IA.';
+
+const whatsappNumber = '5584999509396';
+const whatsappText = encodeURIComponent('Olá! Quero um orçamento de site/landing otimizado para SEO. Meu nicho é: ____ e minha cidade é: ____. Objetivo: (Google/Mapas/Landing).');
+const waLink = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <h1 class="text-4xl font-black tracking-tight">Contato</h1>
+    <p class="mt-3 max-w-2xl text-slate-300">
+      Me diga nicho + cidade + objetivo (Google/Mapas/Landing). Eu respondo com um plano direto.
+    </p>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-black">WhatsApp</h2>
+        <p class="mt-2 text-sm text-slate-300">Resposta mais rápida.</p>
+        <a class="mt-4 inline-flex rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400" href={waLink} target="_blank" rel="noopener">
+          Chamar no WhatsApp
+        </a>
+        <p class="mt-4 text-xs text-slate-500">(Trocar número no código: <code>whatsappNumber</code>)</p>
+      </section>
+
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-black">Briefing rápido</h2>
+        <form class="mt-4 space-y-3" action="https://formspree.io/f/xxxxxx" method="POST">
+          <input class="w-full rounded-xl border border-white/10 bg-slate-950/40 px-3 py-2 text-sm" name="nome" placeholder="Seu nome" required />
+          <input class="w-full rounded-xl border border-white/10 bg-slate-950/40 px-3 py-2 text-sm" name="email" type="email" placeholder="Seu e-mail" required />
+          <input class="w-full rounded-xl border border-white/10 bg-slate-950/40 px-3 py-2 text-sm" name="cidade" placeholder="Cidade/Estado" />
+          <textarea class="w-full rounded-xl border border-white/10 bg-slate-950/40 px-3 py-2 text-sm" name="mensagem" rows="5" placeholder="O que você precisa? (site, landing, GMB, IA…)" required></textarea>
+          <button class="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400" type="submit">
+            Enviar
+          </button>
+          <p class="text-xs text-slate-500">Formulário placeholder (Formspree). Dá pra trocar depois.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

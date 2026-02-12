@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Sobre — SEOFY';
+const description = 'Agência de criação de sites com base de SEO e automações com agentes de IA.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <h1 class="text-4xl font-black tracking-tight">Sobre a SEOFY</h1>
+    <p class="mt-3 max-w-2xl text-slate-300">
+      Somos uma agência focada em construir presença orgânica: sites rápidos, estrutura de SEO e rotinas de melhoria.
+      Onde faz sentido, aplicamos agentes de IA para reduzir trabalho repetitivo e acelerar execução.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        ['Sem gambiarra', 'Base técnica limpa, rastreável e fácil de manter.'],
+        ['SEO de verdade', 'Intenção + conteúdo + técnica + links internos.'],
+        ['IA aplicada', 'Automação que vira entrega, não só “chat”.'],
+      ].map(([h, p]) => (
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="text-sm font-bold">{h}</div>
+          <p class="mt-2 text-sm text-slate-300">{p}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 rounded-3xl border border-white/10 bg-slate-950/40 p-8">
+      <h2 class="text-2xl font-black tracking-tight">O que você pode esperar</h2>
+      <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-300">
+        <li>Recomendação direta (sem enrolar) do que atualizar primeiro</li>
+        <li>Entregas com checklist e versão “publicável”</li>
+        <li>Performance e SEO pensados desde o início</li>
+      </ul>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Serviços — SEOFY';
+const description = 'Criação de sites otimizados para SEO, landing pages, Google Meu Negócio e automações com agentes de IA.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <h1 class="text-4xl font-black tracking-tight">Serviços</h1>
+    <p class="mt-3 max-w-2xl text-slate-300">
+      Tudo o que você precisa para ter presença online que gera demanda: site rápido, base de SEO, conteúdo e automações.
+    </p>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-black" id="sites">Criação de sites otimizados para SEO</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li>Arquitetura: páginas por intenção (serviços, cidades, FAQ, blog)</li>
+          <li>SEO técnico: title/meta, canonicals, schema, sitemap, robots</li>
+          <li>Performance: Core Web Vitals, imagens, cache/CDN</li>
+          <li>Rastreamento: GA4/GSC, eventos de conversão</li>
+        </ul>
+      </section>
+
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-black" id="landing">Landing pages</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li>Copy focada em conversão + prova social</li>
+          <li>Estrutura ideal para tráfego local e campanhas</li>
+          <li>Formulário + WhatsApp + tracking</li>
+        </ul>
+      </section>
+
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-black" id="gmb">Google Meu Negócio</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li>Otimização de perfil, categorias, serviços e fotos</li>
+          <li>Estratégia de avaliações e posts</li>
+          <li>Consistência NAP e páginas locais de suporte</li>
+        </ul>
+      </section>
+
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-black" id="ia">Agentes de IA (aplicados)</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li>Automação de briefing, cluster e FAQ</li>
+          <li>Relatórios (GSC + concorrência) com ações</li>
+          <li>Triagem de leads e respostas rápidas (quando aplicável)</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="mt-10 rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-500/15 via-slate-950 to-emerald-400/10 p-8">
+      <h2 class="text-2xl font-black tracking-tight">Quer um orçamento rápido?</h2>
+      <p class="mt-3 text-slate-300">
+        Me diga seu nicho e cidade + qual objetivo (Google/Mapas/landing). Eu te devolvo um plano direto.
+      </p>
+      <a class="mt-6 inline-flex rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400" href="/contato">Falar com a SEOFY</a>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

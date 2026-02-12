@@ -1,17 +1,99 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
+const title = 'SEOFY — Criação de sites otimizados para SEO + Agentes de IA';
+const description = 'Agência focada em sites rápidos e feitos para ranquear. Landing pages, Google Meu Negócio, SEO técnico e automações com agentes de IA.';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={title} description={description}>
+  <Header />
+
+  <main>
+    <section class="mx-auto max-w-6xl px-4 py-16">
+      <div class="grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Sites rápidos • SEO técnico • IA aplicada
+          </p>
+          <h1 class="mt-4 text-4xl font-black tracking-tight md:text-5xl">
+            Sites otimizados para SEO
+            <span class="text-indigo-300"> + agentes de IA</span>
+          </h1>
+          <p class="mt-4 text-base text-slate-300">
+            A SEOFY cria sites que carregam rápido, são fáceis de manter e já nascem com base técnica para ranquear.
+            Quando faz sentido, colocamos automações e agentes de IA para acelerar conteúdo, relatórios e rotina de vendas.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400" href="/contato">
+              Quero um orçamento
+            </a>
+            <a class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10" href="/servicos">
+              Ver serviços
+            </a>
+          </div>
+
+          <ul class="mt-8 grid gap-3 text-sm text-slate-300">
+            <li><strong class="text-slate-100">SEO</strong>: estrutura, velocidade, schema, conteúdo e links internos.</li>
+            <li><strong class="text-slate-100">Performance</strong>: Core Web Vitals, imagens, CDN e cache.</li>
+            <li><strong class="text-slate-100">IA aplicada</strong>: briefing, cluster, FAQ, relatórios e automações.</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/20 via-slate-950 to-emerald-400/10 p-6">
+          <div class="rounded-2xl border border-white/10 bg-slate-950/60 p-5">
+            <div class="text-sm font-semibold text-slate-200">O que entregamos</div>
+            <div class="mt-4 grid gap-3">
+              {[
+                ['Landing pages', 'Página de alta conversão com copy e SEO local.'],
+                ['Sites institucionais', 'Arquitetura de páginas + rastreabilidade + velocidade.'],
+                ['Google Meu Negócio', 'Otimização para mapa e presença local.'],
+                ['Automação/IA', 'Agentes para conteúdo, triagem e relatórios.'],
+              ].map(([h, p]) => (
+                <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <div class="text-sm font-bold text-slate-100">{h}</div>
+                  <div class="mt-1 text-sm text-slate-300">{p}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-white/10 bg-white/5">
+      <div class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl font-black tracking-tight">Como trabalhamos</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          {[
+            ['Diagnóstico', 'Entendemos o nicho, a SERP e as páginas que precisam existir.'],
+            ['Construção', 'Design limpo, conteúdo objetivo, performance e SEO técnico.'],
+            ['Evolução', 'Rotina de atualizações, melhoria contínua e relatórios.'],
+          ].map(([h, p]) => (
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-5">
+              <div class="text-sm font-bold">{h}</div>
+              <p class="mt-2 text-sm text-slate-300">{p}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-12">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-950 via-indigo-500/10 to-slate-950 p-8">
+        <h2 class="text-2xl font-black tracking-tight">Quer colocar um site no ar sem VPS?</h2>
+        <p class="mt-3 text-slate-300">
+          A gente consegue publicar em Cloudflare Pages/Netlify/Vercel com custo baixo, alta velocidade e base sólida de SEO.
+        </p>
+        <div class="mt-6">
+          <a class="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400" href="/contato">Falar com a SEOFY</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

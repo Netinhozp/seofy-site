@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'SEOFY — Sites otimizados para SEO + Agentes de IA',
+  description = 'Criamos sites rápidos, seguros e feitos para ranquear no Google. Landing pages, Google Meu Negócio, automações e agentes de IA para acelerar resultados.',
+  canonical,
+} = Astro.props;
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="min-h-dvh bg-slate-950 text-slate-100 antialiased">
+    <slot />
+  </body>
+</html>
