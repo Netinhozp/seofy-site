@@ -3,107 +3,21 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = 'Portfólio de Sites por Nicho — SEOFY';
-const description = 'Modelos e referências de sites para nichos locais: criação e aluguel de sites com foco em conversão.';
+const title = 'Portfólio — SEOFY';
+const description = 'Exemplos de qualidade de sites da SEOFY.';
 ---
 
 <Layout title={title} description={description}>
   <Header />
 
   <main class="mx-auto max-w-6xl px-4 py-12">
-    <p class="text-sm font-semibold text-fuchsia-300">Portfólio</p>
-    <h1 class="mt-1 text-4xl font-black tracking-tight">Modelos por nicho com demonstração</h1>
+    <h1 class="text-4xl font-black tracking-tight">Portfólio</h1>
     <p class="mt-3 max-w-3xl text-slate-300">
-      Esses modelos são base de referência. A gente personaliza com sua marca, serviços, cidade e estrutura de conversão.
+      Os cards com demonstração ao vivo estão na página inicial para facilitar sua navegação.
     </p>
-
-    <div class="mt-5 flex flex-wrap gap-2" id="cases-filters">
-      <button data-filter="all" class="cases-filter rounded-full border border-white/10 bg-white/15 px-3 py-1 text-xs text-slate-100">Trending</button>
-      <button data-filter="servicos" class="cases-filter rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">Serviços</button>
-      <button data-filter="local" class="cases-filter rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">Empresas locais</button>
-      <button data-filter="portfolio" class="cases-filter rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">Portfólio</button>
-      <button data-filter="landing" class="cases-filter rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">Landing Pages</button>
+    <div class="mt-6">
+      <a class="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400" href="/">Ver cards na Home</a>
     </div>
-
-    <div class="mt-6 grid gap-4 md:grid-cols-3">
-      {[
-        {
-          nicho: 'Odontologia', cat: 'local',
-          demo: 'https://astrowind.vercel.app/',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://astrowind.vercel.app/'
-        },
-        {
-          nicho: 'Estética', cat: 'landing',
-          demo: 'https://tailus.io/blocks/marketing-ui/preview/',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://tailus.io/blocks/marketing-ui/preview/'
-        },
-        {
-          nicho: 'Advocacia', cat: 'servicos',
-          demo: 'https://preline.co/templates/agency/index.html',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://preline.co/templates/agency/index.html'
-        },
-        {
-          nicho: 'Imobiliária', cat: 'portfolio',
-          demo: 'https://themes.getbootstrap.com/preview/?theme_id=74936',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://themes.getbootstrap.com/preview/?theme_id=74936'
-        },
-        {
-          nicho: 'Ar-condicionado', cat: 'servicos',
-          demo: 'https://html5up.net/landed',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://html5up.net/landed'
-        },
-        {
-          nicho: 'Energia Solar', cat: 'landing',
-          demo: 'https://astro.build/themes/details/astrowind/',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://astro.build/themes/details/astrowind/'
-        },
-        {
-          nicho: 'Locação de equipamentos', cat: 'local',
-          demo: 'https://html5up.net/solid-state',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://html5up.net/solid-state'
-        },
-        {
-          nicho: 'Oficina mecânica', cat: 'local',
-          demo: 'https://html5up.net/massively',
-          thumb: 'https://image.thum.io/get/width/1000/noanimate/https://html5up.net/massively'
-        },
-      ].map((item) => (
-        <article data-cat={item.cat} class="cases-card overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
-          <img src={item.thumb} alt={`Template para ${item.nicho}`} class="h-48 w-full object-cover" loading="lazy" />
-          <div class="p-4">
-            <h3 class="text-sm font-bold text-slate-100">{item.nicho}</h3>
-            <div class="mt-3 flex gap-2">
-              <a class="rounded-lg border border-white/10 px-3 py-1 text-xs text-slate-100 hover:bg-white/10" href={item.demo} target="_blank" rel="noopener">Ver demonstração ao vivo</a>
-              <a class="rounded-lg bg-indigo-500 px-3 py-1 text-xs font-semibold text-white hover:bg-indigo-400" href="/contato">Quero esse modelo</a>
-            </div>
-          </div>
-        </article>
-      ))}
-    </div>
-
-  <script is:inline>
-    const root = document.querySelector('#cases-filters');
-    if (root) {
-      const buttons = [...root.querySelectorAll('.cases-filter')];
-      const cards = [...document.querySelectorAll('.cases-card')];
-      const apply = (filter) => {
-        cards.forEach((card) => {
-          const cat = card.getAttribute('data-cat');
-          card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
-        });
-        buttons.forEach((b) => {
-          const active = b.getAttribute('data-filter') === filter;
-          b.classList.toggle('bg-white/15', active);
-          b.classList.toggle('text-slate-100', active);
-          b.classList.toggle('bg-white/5', !active);
-          b.classList.toggle('text-slate-200', !active);
-        });
-      };
-      buttons.forEach((btn) => btn.addEventListener('click', () => apply(btn.getAttribute('data-filter'))));
-      apply('all');
-    }
-  </script>
-
   </main>
 
   <Footer />
