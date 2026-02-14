@@ -1,0 +1,26 @@
+<svg width="900" height="220" viewBox="0 0 900 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lg" x1="28" y1="20" x2="196" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DF9FF"/>
+      <stop offset="1" stop-color="#2F6BFF"/>
+    </linearGradient>
+    <linearGradient id="tg" x1="260" y1="38" x2="750" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E2E8F0"/>
+      <stop offset="1" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+
+  <!-- mark -->
+  <g transform="translate(16,10)">
+    <circle cx="90" cy="100" r="82" fill="url(#lg)"/>
+    <circle cx="90" cy="100" r="58" fill="#0F172A"/>
+    <circle cx="90" cy="100" r="36" fill="#020617"/>
+    <circle cx="73" cy="77" r="6" fill="#E0FBFF"/>
+    <circle cx="106" cy="122" r="9" fill="#E0FBFF"/>
+    <path d="M38 72C51 48 76 34 104 34C131 34 154 46 168 66" stroke="#E6FDFF" stroke-width="10" stroke-linecap="round" opacity="0.92"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="220" y="138" font-size="116" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" fill="url(#tg)" letter-spacing="2">SEOFY</text>
+  <text x="225" y="176" font-size="28" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="500" fill="#94A3B8" letter-spacing="1.2">SEO + IA APLICADA</text>
+</svg>
