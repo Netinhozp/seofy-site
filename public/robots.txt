@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seofy.com.br/sitemap-index.xml
