@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Termos de Uso — SEOFY';
+const description = 'Termos de uso da SEOFY.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="text-3xl font-black tracking-tight">Termos de Uso</h1>
+    <p class="mt-4 text-slate-300">Ao utilizar este site, você concorda com os termos de uso e condições comerciais da SEOFY.</p>
+  </main>
+  <Footer />
+</Layout>
