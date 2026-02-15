@@ -8,6 +8,31 @@ const {
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'SEOFY — Criação e Aluguel de Sites',
+  url: 'https://seofy.com.br',
+  telephone: '+55 84 99950-9396',
+  areaServed: [
+    { '@type': 'City', name: 'Natal' },
+    { '@type': 'AdministrativeArea', name: 'Rio Grande do Norte' }
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Natal',
+    addressRegion: 'RN',
+    addressCountry: 'BR'
+  },
+  sameAs: [
+    'https://www.instagram.com/seofynatal?igsh=MTVocGJldmtla2Nmbg=='
+  ],
+  serviceType: [
+    'Criação e aluguel de sites',
+    'Google Meu Negócio',
+    'Agentes de IA para atendimento'
+  ]
+};
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -25,6 +50,8 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site ?? Astr
     <meta property="og:url" content={canonicalUrl} />
 
     <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
     <link rel="icon" href="/brand/seofy-mark.svg" type="image/svg+xml" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
